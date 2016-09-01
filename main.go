@@ -249,7 +249,7 @@ Options:
 		fmt.Printf("Warning! This will overwrite existing kv. Press [enter] to continue; CTL-C to exit")
 		fmt.Scanln()
 		fmt.Println("Restoring KV from file: ", arguments["<filename>"].(string))
-		restore(arguments["--address"].(string), arguments["--token"].(string), arguments["<filename>"].(string))
+		restore(httpendpoint, arguments["--token"].(string), arguments["<filename>"].(string))
 	} else {
 		if (len(arguments["--exclude-prefix"].([]string)) > 0) && (len(arguments["--include-prefix"].([]string)) > 0) {
 			fmt.Printf("\n--exclude-prefix and --include-prefix cannot be used together\n\n")
